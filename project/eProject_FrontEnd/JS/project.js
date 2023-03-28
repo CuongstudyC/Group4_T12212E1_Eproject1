@@ -67,6 +67,7 @@ const cartcount1 = document.getElementById("Cart--count--for--all");
 const totalcheck =document.getElementById("TotalCheck");
 const yourcart =document.getElementById("Your--cart");
 const lastcart =document.getElementById("Last--cart");
+const cartnameproduct = document.getElementById("Cart--count--for--all");
 
 //khai báo nhiều lần
 //product 1:
@@ -167,8 +168,11 @@ const hiden24 =document.getElementsByClassName("product--diamond24");
 
 // ---------------------------------------------------------------------------------------------------------------
 
+   //chỉ khai báo 1 lần
+   const Nocart =document.getElementsByClassName("No--cart");
+
 //cho tất cả về ==0;
-if (localStorage.countRemove <= 0){
+if (localStorage.countRemove <= 0 || isNaN(localStorage.count) == true){
     //default:
     localStorage.count=0;
     localStorage.TotalForAll=0;
@@ -270,6 +274,7 @@ if (localStorage.countRemove <= 0){
      localStorage.soluongTotal24=0;
 }
 
+
 //-------------------------------------------------------------------------------------------------------------------
 if (localStorage.count >0){
     //khai báo 1 lần
@@ -364,7 +369,7 @@ if (localStorage.count >0){
     //product 15:
     var show15 =document.getElementsByClassName("product--diamond15");
     show15[0].style.display="block";
-    if (localStorage.tontai14 ==0){
+    if (localStorage.tontai15 ==0){
         show15[0].style.display="none";
     }
     //product 16:
@@ -421,11 +426,6 @@ if (localStorage.count >0){
   if (localStorage.tontai24 ==0){
       show24[0].style.display="none";
   }                                        
-
-
-    //chỉ khai báo 1 lần
-    var Nocart =document.getElementsByClassName("No--cart");
-    Nocart[0].style.display="none"; 
 
     //khai báo nhiều lần:
     //product 1:
@@ -650,6 +650,930 @@ else{
     if (localStorage.soluong24 ==0){
         hiden24[0].style.display ="none";
     }
+    //setup default if no cart:
+    if (localStorage.count >0){
+        Nocart[0].style.display="none"; 
+    }
+    else{
+        Nocart[0].style.display="block"; 
+    }
+
+    // khai báo nhiều lần:
+//--------------------------------------------------------------------product 1---------------------------------------------
+function numberproduct1(){
+    if (number1[0].value==""){
+        number1[0].value=1;
+    }
+const totalproduct1 = document.getElementById("Total--product1");
+localStorage.soluong1=number1[0].value;
+localStorage.sum1= parseInt(localStorage.soluong1)*4657;
+totalproduct1.innerHTML= "$" + localStorage.sum1;
+localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                     parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                     parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                     parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                     parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                     parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                     parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                     parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+
+localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                     parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                     parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                     parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                     parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                     parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                     parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                     parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+cartcount1.innerHTML = localStorage.count;
+if (localStorage.soluong1 <=0){
+    hiden1[0].style.display ="none";
+} 
+if (localStorage.count <=0){
+    yourcart.style.display ="none"; 
+    lastcart.style.display ="none";
+    Nocart[0].style.display="block";
+    cartcount1.style.display="none"; 
+}
+}
+
+ //-----------------------------------------------------------------------product 2--------------------------------------
+function numberproduct2(){
+    if (numberp2[0].value==""){
+        numberp2[0].value=1;
+    }
+    const totalproduct2 = document.getElementById("Total--product2");
+    localStorage.soluong2=numberp2[0].value;
+    localStorage.sum2= parseInt(localStorage.soluong2)*4634;
+    totalproduct2.innerHTML= "$" + localStorage.sum2;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong2 <=0){
+        hiden2[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+
+ //-------------------------------------------------------------product 3-----------------------------------------------
+ function numberproduct3(){
+    if (numberp3[0].value==""){
+        numberp3[0].value=1;
+    }
+    const totalproduct3 = document.getElementById("Total--product3");
+    localStorage.soluong3=numberp3[0].value;
+    localStorage.sum3= parseInt(localStorage.soluong3)*4280;
+    totalproduct3.innerHTML= "$" + localStorage.sum3;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong3 <=0){
+        hiden3[0].style.display ="none";
+    }
+    if (localStorage.count <=0 ){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+//-------------------------------------------------------------product 4-----------------------------------------------
+function numberproduct4(){
+    if (numberp4[0].value==""){
+        numberp4[0].value=1;
+    }
+    const totalproduct4 = document.getElementById("Total--product4");
+    localStorage.soluong4=numberp4[0].value;
+    localStorage.sum4= parseInt(localStorage.soluong4)*4138;
+    totalproduct4.innerHTML= "$" + localStorage.sum4;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong4 <=0){
+        hiden4[0].style.display ="none";
+    }
+    if (localStorage.count <=0 ){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ----------------------------------------------------------product 5-------------------------------------------------------
+function numberproduct5(){
+    if (numberp5[0].value==""){
+        numberp5[0].value=1;
+    }
+    const totalproduct5 = document.getElementById("Total--product5");
+    localStorage.soluong5=numberp5[0].value;
+    localStorage.sum5= parseInt(localStorage.soluong5)*3463;
+    totalproduct5.innerHTML= "$" + localStorage.sum5;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong5 <=0){
+        hiden5[0].style.display ="none";
+    }
+    if (localStorage.count <=0 ){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ---------------------------------------------------------------product 6------------------------------------------------
+function numberproduct6(){
+    if (numberp6[0].value==""){
+        numberp6[0].value=1;
+    }
+    const totalproduct6 = document.getElementById("Total--product6");
+    localStorage.soluong6=numberp6[0].value;
+    localStorage.sum6= parseInt(localStorage.soluong6)*3210;
+    totalproduct6.innerHTML= "$" + localStorage.sum6;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong6 <=0){
+        hiden6[0].style.display ="none";
+    }
+    if (localStorage.count <=0 ){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -------------------------------------------------------------product 7---------------------------------------------------
+function numberproduct7(){
+    if (numberp7[0].value==""){
+        numberp7[0].value=1;
+    }
+    const totalproduct7 = document.getElementById("Total--product7");
+    localStorage.soluong7=numberp7[0].value;
+    localStorage.sum7= parseInt(localStorage.soluong7)*2951;
+    totalproduct7.innerHTML= "$" + localStorage.sum7;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong7 <=0){
+        hiden7[0].style.display ="none";
+    }
+    if (localStorage.count <=0 ){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ----------------------------------------------------------product 8----------------------------------------------------
+function numberproduct8(){
+    if (numberp8[0].value==""){
+        numberp8[0].value=1;
+    }
+    const totalproduct8 = document.getElementById("Total--product8");
+    localStorage.soluong8=numberp8[0].value;
+    localStorage.sum8= parseInt(localStorage.soluong8)*2371;
+    totalproduct8.innerHTML= "$" + localStorage.sum8;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong8 <=0){
+        hiden8[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ------------------------------------------------------------product 9----------------------------------------------------
+function numberproduct9(){
+    if (numberp9[0].value==""){
+        numberp9[0].value=1;
+    }
+    const totalproduct9 = document.getElementById("Total--product9");
+    localStorage.soluong9=numberp9[0].value;
+    localStorage.sum9= parseInt(localStorage.soluong9)*805;
+    totalproduct9.innerHTML= "$" + localStorage.sum9;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong9 <=0){
+        hiden9[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ---------------------------------------------------------product 10---------------------------------------------------
+function numberproduct10(){
+    if (numberp10[0].value==""){
+        numberp10[0].value=1;
+    }
+    const totalproduct10 = document.getElementById("Total--product10");
+    localStorage.soluong10=numberp10[0].value;
+    localStorage.sum10= parseInt(localStorage.soluong10)*670;
+    totalproduct10.innerHTML= "$" + localStorage.sum10;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong10 <=0){
+        hiden10[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// --------------------------------------------------------product 11--------------------------------------------------
+function numberproduct11(){
+    if (numberp11[0].value==""){
+        numberp11[0].value=1;
+    }
+    const totalproduct11 = document.getElementById("Total--product11");
+    localStorage.soluong11=numberp11[0].value;
+    localStorage.sum11= parseInt(localStorage.soluong11)*910;
+    totalproduct11.innerHTML= "$" + localStorage.sum11;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong11 <=0){
+        hiden11[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ---------------------------------------------------------product 12-----------------------------------------------------
+function numberproduct12(){
+    if (numberp12[0].value==""){
+        numberp12[0].value=1;
+    }
+    const totalproduct12 = document.getElementById("Total--product12");
+    localStorage.soluong12=numberp12[0].value;
+    localStorage.sum12= parseInt(localStorage.soluong12)*417;
+    totalproduct12.innerHTML= "$" + localStorage.sum12;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong12 <=0){
+        hiden12[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ---------------------------------------------------product 13---------------------------------------------------------
+function numberproduct13(){
+    if (numberp13[0].value==""){
+        numberp13[0].value=1;
+    }
+    const totalproduct13 = document.getElementById("Total--product13");
+    localStorage.soluong13=numberp13[0].value;
+    localStorage.sum13= parseInt(localStorage.soluong13)*1656;
+    totalproduct13.innerHTML= "$" + localStorage.sum13;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong13 <=0){
+        hiden13[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ----------------------------------------------------product 14-----------------------------------------------------
+function numberproduct14(){
+    if (numberp14[0].value==""){
+        numberp14[0].value=1;
+    }
+    const totalproduct14 = document.getElementById("Total--product14");
+    localStorage.soluong14=numberp14[0].value;
+    localStorage.sum14= parseInt(localStorage.soluong14)*973;
+    totalproduct14.innerHTML= "$" + localStorage.sum14;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong14 <=0){
+        hiden14[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -------------------------------------------------------product 15-------------------------------------------------------
+function numberproduct15(){
+    if (numberp15[0].value==""){
+        numberp15[0].value=1;
+    }
+    const totalproduct15 = document.getElementById("Total--product15");
+    localStorage.soluong15=numberp15[0].value;
+    localStorage.sum15= parseInt(localStorage.soluong15)*1036;
+    totalproduct15.innerHTML= "$" + localStorage.sum15;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong15 <=0){
+        hiden15[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -------------------------------------------------------product 16------------------------------------------------------
+function numberproduct16(){
+    if (numberp16[0].value==""){
+        numberp16[0].value=1;
+    }
+    const totalproduct16 = document.getElementById("Total--product16");
+    localStorage.soluong16=numberp16[0].value;
+    localStorage.sum16= parseInt(localStorage.soluong16)*316;
+    totalproduct16.innerHTML= "$" + localStorage.sum16;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong16 <=0){
+        hiden16[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -----------------------------------------------------product 17------------------------------------------------------
+function numberproduct17(){
+    if (numberp17[0].value==""){
+        numberp17[0].value=1;
+    }
+    const totalproduct17 = document.getElementById("Total--product17");
+    localStorage.soluong17=numberp17[0].value;
+    localStorage.sum17= parseInt(localStorage.soluong17)*3036;
+    totalproduct17.innerHTML= "$" + localStorage.sum17;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong17 <=0){
+        hiden17[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ------------------------------------------------------------product 18------------------------------------------------
+function numberproduct18(){
+    if (numberp18[0].value==""){
+        numberp18[0].value=1;
+    }
+    const totalproduct18 = document.getElementById("Total--product18");
+    localStorage.soluong18=numberp18[0].value;
+    localStorage.sum18= parseInt(localStorage.soluong18)*3800;
+    totalproduct18.innerHTML= "$" + localStorage.sum18;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong18 <=0){
+        hiden18[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ------------------------------------------------------------product 19--------------------------------------------------
+function numberproduct19(){
+    if (numberp19[0].value==""){
+        numberp19[0].value=1;
+    }
+    const totalproduct19 = document.getElementById("Total--product19");
+    localStorage.soluong19=numberp19[0].value;
+    localStorage.sum19= parseInt(localStorage.soluong19)*3663;
+    totalproduct19.innerHTML= "$" + localStorage.sum19;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong19 <=0){
+        hiden19[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -------------------------------------------------------------product 20-------------------------------------------------
+function numberproduct20(){
+    if (numberp20[0].value==""){
+        numberp20[0].value=1;
+    }
+    const totalproduct20 = document.getElementById("Total--product20");
+    localStorage.soluong20=numberp20[0].value;
+    localStorage.sum20= parseInt(localStorage.soluong20)*28413;
+    totalproduct20.innerHTML= "$" + localStorage.sum20;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong20 <=0){
+        hiden20[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// -------------------------------------------------------------product 21---------------------------------------------
+function numberproduct21(){
+    if (numberp21[0].value==""){
+        numberp21[0].value=1;
+    }
+    const totalproduct21 = document.getElementById("Total--product21");
+    localStorage.soluong21=numberp21[0].value;
+    localStorage.sum21= parseInt(localStorage.soluong21)*2640;
+    totalproduct21.innerHTML= "$" + localStorage.sum21;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong21 <=0){
+        hiden21[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ---------------------------------------------------------product 22------------------------------------------------
+function numberproduct22(){
+    if (numberp22[0].value==""){
+        numberp22[0].value=1;
+    }
+    const totalproduct22 = document.getElementById("Total--product22");
+    localStorage.soluong22=numberp22[0].value;
+    localStorage.sum22= parseInt(localStorage.soluong22)*3723;
+    totalproduct22.innerHTML= "$" + localStorage.sum22;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong22 <=0){
+        hiden22[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// --------------------------------------------------------product 23---------------------------------------------------
+function numberproduct23(){
+    if (numberp23[0].value==""){
+        numberp23[0].value=1;
+    }
+    const totalproduct23 = document.getElementById("Total--product23");
+    localStorage.soluong23=numberp23[0].value;
+    localStorage.sum23= parseInt(localStorage.soluong23)*4671;
+    totalproduct23.innerHTML= "$" + localStorage.sum23;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong23 <=0){
+        hiden23[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// ----------------------------------------------------product 24-------------------------------------------------------
+function numberproduct24(){
+    if (numberp24[0].value==""){
+        numberp24[0].value=1;
+    }
+    const totalproduct24 = document.getElementById("Total--product24");
+    localStorage.soluong24=numberp24[0].value;
+    localStorage.sum24= parseInt(localStorage.soluong24)*24984;
+    totalproduct24.innerHTML= "$" + localStorage.sum24;
+    localStorage.count = parseInt( localStorage.soluong1) + parseInt( localStorage.soluong2) +parseInt( localStorage.soluong3)+
+                         parseInt( localStorage.soluong4) + parseInt( localStorage.soluong5) + parseInt( localStorage.soluong6)+ 
+                         parseInt( localStorage.soluong7) + parseInt( localStorage.soluong8) + parseInt( localStorage.soluong9)+
+                         parseInt( localStorage.soluong10) + parseInt( localStorage.soluong11) + parseInt( localStorage.soluong12)+
+                         parseInt( localStorage.soluong13) + parseInt( localStorage.soluong14) + parseInt( localStorage.soluong15)+
+                         parseInt( localStorage.soluong16) + parseInt( localStorage.soluong17) + parseInt( localStorage.soluong18)+
+                         parseInt( localStorage.soluong19) + parseInt( localStorage.soluong20) + parseInt( localStorage.soluong21)+
+                         parseInt( localStorage.soluong22) + parseInt( localStorage.soluong23) + parseInt( localStorage.soluong24);
+    
+    localStorage.TotalForAll = parseInt(localStorage.sum1) + parseInt(localStorage.sum2) + parseInt(localStorage.sum3)+
+                         parseInt(localStorage.sum4) + parseInt(localStorage.sum5) + parseInt(localStorage.sum6)+
+                         parseInt(localStorage.sum7) + parseInt(localStorage.sum8) + parseInt(localStorage.sum9)+
+                         parseInt(localStorage.sum10) + parseInt(localStorage.sum11) + parseInt(localStorage.sum12)+
+                         parseInt(localStorage.sum13) + parseInt(localStorage.sum14) + parseInt(localStorage.sum15)+
+                         parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
+                         parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
+                         parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
+    cartcount1.innerHTML = localStorage.count;
+    if (localStorage.soluong24 <=0){
+        hiden24[0].style.display ="none";
+    }
+    if (localStorage.count <=0){
+        yourcart.style.display ="none"; 
+        lastcart.style.display ="none";
+        Nocart[0].style.display="block";
+        cartcount1.style.display="none"; 
+    }
+}
+// --------------------------------------------------------------------------------------------------------------------------
 const Numb =0;
 //------------------------------------------------------------Product 1 ------------------------------------------
 function ClickAddCart1(){
@@ -727,6 +1651,8 @@ function remove1(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+      cartnameproduct.innerHTML =localStorage.count;
+      totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 //------------------------------------------------------------Product 2-----------------------------------------
@@ -802,6 +1728,8 @@ function remove2(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    cartnameproduct.innerHTML =localStorage.count;
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -883,6 +1811,8 @@ function remove3(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+    cartnameproduct.innerHTML =localStorage.count;
+    totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -964,6 +1894,8 @@ function remove4(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1045,6 +1977,8 @@ function remove5(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1126,6 +2060,8 @@ function remove6(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1207,6 +2143,8 @@ function remove7(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1288,6 +2226,8 @@ function remove8(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1369,6 +2309,8 @@ function remove9(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1450,6 +2392,8 @@ function remove10(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1531,6 +2475,8 @@ function remove11(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1612,6 +2558,8 @@ function remove12(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1693,6 +2641,8 @@ function remove13(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1774,15 +2724,13 @@ function remove14(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
 // ---------------------------------------------------------Product 15---------------------------------------------------
 function ClickAddCart15(){
-    if (localStorage.sum2==0){
-        hiden2[0].style.display="none";
-    }
- 
     localStorage.tontai15=1;
     yourcart.style.display ="block";
     lastcart.style.display ="block";
@@ -1855,6 +2803,8 @@ function remove15(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -1936,6 +2886,8 @@ function remove16(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2017,6 +2969,8 @@ function remove17(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2098,6 +3052,8 @@ function remove18(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2179,6 +3135,8 @@ function remove19(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2260,6 +3218,8 @@ function remove20(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2341,6 +3301,8 @@ function remove21(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2422,6 +3384,8 @@ function remove22(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2503,6 +3467,8 @@ function remove23(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2584,6 +3550,8 @@ function remove24(){
                                 parseInt(localStorage.sum16) + parseInt(localStorage.sum17) + parseInt(localStorage.sum18)+
                                 parseInt(localStorage.sum19) + parseInt(localStorage.sum20) + parseInt(localStorage.sum21)+
                                 parseInt(localStorage.sum22) + parseInt(localStorage.sum23) + parseInt(localStorage.sum24);
+                                cartnameproduct.innerHTML =localStorage.count;
+                                totalcheck.innerHTML = "$" + localStorage.TotalForAll;
     localStorage.countRemove = parseInt(localStorage.countRemove) -1;
 }
 
@@ -2666,19 +3634,61 @@ function Cumment(){
     if (check[0].checked){
         for (var i=0;i<hiden.length;i++){
             hiden[i].style.display ="none";
+
         }
     }
+    // else{
+    //     for (var i=0;i<hiden.length;i++){
+    //         hiden[i].style.display ="inline";
+    //     }
+    // }
     return false;
 }
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+        var com =document.getElementById("Comment");
+        var name=document.getElementById("name*");
+        var getcomment = document.getElementById("textcomment");
+        var email = document.getElementById("email*");
+        com.style.display="block";
+        var check = document.getElementById("check--box");
+        var savename =document.getElementById("SaveName");
+    
+        if (check.checked){
+           name.style.display ="none";
+           email.style.display= "none";
+           document.getElementById("HidenName").style.display = "none";
+           document.getElementById("HidenEmail").style.display = "none";
+           savename.style.display ="none";
+           check.style.display = "none";
+        }
+        localStorage.GetName = name.value;
+        localStorage.GetEmail = email.value;
+         // Ngăn chặn trình duyệt gửi form đến một trang khác
+        event.preventDefault();
+        // Tạo một phần tử comment mới
+        var comment = document.createElement("p");
+        var BinhLuan = getcomment.value;
+        comment.textContent =  localStorage.GetName +"-"+ localStorage.GetEmail+": " + BinhLuan;
+      
+        // Thêm comment vào phần tử chứa các comment
+        com.appendChild(comment);
+
+        BinhLuan="";
+        getcomment.value="";
+      });
+
 function CheckOut(){
     alert("Cash successful!\n Have a nice day");
 }
 function CheckItOut(){
-    if (localStorage.countRemove == 0){
+    if (localStorage.countRemove == 0 || localStorage.count <=0 || isNaN(localStorage.TotalForAll)){
         alert("You must go to cart in shop!!!");
         return false;
     }
 }
+
 
 const showproduct =document.getElementsByClassName("product");
 for (var i=8;i<showproduct.length;i++){
@@ -2710,28 +3720,28 @@ function sortByPriceIncrease(products) {
       productContainer.appendChild(product);
     })
     // -------------------------------------------
-    if (sessionStorage.countpage ==1 || sessionStorage.countpage ==0){
-    for(var j=8; j<showproduct.length; j++){
-        showproduct[j].style.display ="none";
-    }
-    }
-    else if (sessionStorage.countpage ==2){
-        var i =0;
-        while(i<showproduct.length){
-            if (i>7 && i<16){
-                showproduct[i].style.display ="block";
-            }
-            else{
-                showproduct[i].style.display ="none";
-            }
-            i++;
-        }
-    }
-    else {
+    if (sessionStorage.countpage ==3){
         for(var j=0; j<16; j++){
             showproduct[j].style.display ="none";
         }
-    }
+        }
+        else if (sessionStorage.countpage ==2){
+            var i =0;
+            while(i<showproduct.length){
+                if (i>7 && i<16){
+                    showproduct[i].style.display ="block";
+                }
+                else{
+                    showproduct[i].style.display ="none";
+                }
+                i++;
+            }
+        }
+        else {
+            for(var j=8; j<showproduct.length; j++){
+                showproduct[j].style.display ="none";
+            }
+        }
   })
 
   //Sort dereased:
@@ -2758,8 +3768,8 @@ function sortByPriceIncrease(products) {
       productContainer.appendChild(product);
     })
     // -----------------------------------------
-    if (sessionStorage.countpage ==1 || sessionStorage.countpage ==0){
-        for(var j=8; j<showproduct.length; j++){
+    if (sessionStorage.countpage ==3){
+        for(var j=0; j<16; j++){
             showproduct[j].style.display ="none";
         }
         }
@@ -2776,12 +3786,12 @@ function sortByPriceIncrease(products) {
             }
         }
         else {
-            for(var j=0; j<16; j++){
+            for(var j=8; j<showproduct.length; j++){
                 showproduct[j].style.display ="none";
             }
         }
   })
-sessionStorage.countpage =0;
+// sessionStorage.countpage =0;
 
   function page1totalshop(){
     var products = document.getElementsByClassName("product");
@@ -2801,6 +3811,7 @@ sessionStorage.countpage =0;
         }
     }
     sessionStorage.countpage =1;
+    return false;
   }
 
   function page2totalshop(){
@@ -2825,6 +3836,7 @@ sessionStorage.countpage =0;
         i++;
     }
     sessionStorage.countpage =2;
+    return false;
   }
 
   function page3totalshop(){
@@ -2849,8 +3861,26 @@ sessionStorage.countpage =0;
         i++;
     }
     sessionStorage.countpage=3;
+    return false;
   }
 
+    //Tìm kiếm thông tin
+    function SearchInput(){
+        var searchInput = document.getElementById('search-input');
+        var productlist = document.getElementsByClassName('product-list');
+        var products = productlist[0].getElementsByClassName("product");
+        var filter = searchInput.value.toLowerCase();
+        for (var i = 0; i < products.length; i++) {
+          var productName = products[i].textContent.toLowerCase();
+          if (productName.indexOf(filter) !== -1) {
+            products[i].style.display = 'block';
+          } else {
+            products[i].style.display = 'none';
+          }
+        }
+      }
 
-
-
+function submitcontactus(){
+    alert("Thank you for your contact! \nHave a good day!!!");
+}
+    
