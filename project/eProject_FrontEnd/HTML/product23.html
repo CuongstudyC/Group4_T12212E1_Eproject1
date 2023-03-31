@@ -51,8 +51,8 @@
             <li><a href="home.html" class="list">Home</a></li>
         </ul></td>
         <td> <ul onmouseleave="comeout1()">
-            <li><a href="MyTeam.html" class="list">My Team</a></li>
-            <li><a href="AboutUs.html" class="list">About Us</a></li>
+            <li><a href="MyTeam.html" class="list">Our Team</a></li>
+            <li><a href="AboutUs.html" class="list">Contact Us</a></li>
         </ul></td>
         <td> <ul onmouseleave="comeout2()">
             <li><a href="NewestGemstones.html" class="list">Newest gemstones</a></li>
@@ -554,39 +554,47 @@
             A 1.01 Ct. Pear Emerald refers to a pear-shaped emerald gemstone that weighs approximately 1.01 carats. Emerald is a precious stone known for its rich green color and is a member of the beryl mineral family. The pear cut is a popular diamond cut that resembles a teardrop, and it is often used for colored gemstones like emeralds to enhance their brilliance and beauty. The 1.01 carat weight is a standard measurement used to determine the size and value of a gemstone, with one carat being equal to 0.2 grams. Overall, a 1.01 Ct. Pear Emerald is a stunning and valuable gemstone that would make a beautiful addition to any jewelry collection.
         </div>
     <div class="context--description--first" style="display:none;">
-        <div id="Comment" style="display: none; width:50%; border:solid">
-
+        <div id="Hiden-Show">
+            <div class="row">
+            <div id="Comment" class="col-sm-6" ></div>
+            <div id="getStar" class="col-sm-6" style="text-align: right;color:yellowgreen;"></div>
+        </div>
         </div>
         <h2>Be the first to review "1.01 Ct.Pear Emerald"</h2>
         <p>Your email address will not be published. Required fields are marked *</p>
         <form  onsubmit="return Cumment()">
-        <p>Your rating*</p>
-        <div class="rating ">
-            <span class="fa fa-star" data-rating="1"></span>
-            <span class="fa fa-star" data-rating="2"></span>
-            <span class="fa fa-star" data-rating="3"></span>
-            <span class="fa fa-star" data-rating="4"></span>
-            <span class="fa fa-star" data-rating="5"></span>
-          </div>
-          <p>Your review*</p>
-          <textarea id="text" cols="100" rows="5" required></textarea>
-          <table>
-            <tr>
-                <td class="td-first">Name*</td>
-                <td class="td-first"><input class="namecomment" type="text" required></td>
-            </tr>
-            <tr>
-                <td class="td-first">Email*</td>
-                <td class="td-first"> <input class="emailcomment" type="email" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="td-first"><input type="checkbox" class="check--diamond--first"><span class="check--diamond--first" >Save my name, email, and website in this browser for the next time I comment.</span> </td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" required ></td>
-            </tr>
-          </table>
-        </form>
+            <p>Your rating*</p>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text" onmouseup=" return zzz(this)" data-star="5" >5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text" onmouseup="return zzz(this)" data-star="4">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text" onmouseup="return zzz(this)" data-star="3">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text" onmouseup="return zzz(this)" data-star="2">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text" onmouseup="return zzz(this)" data-star="1">1 star</label>
+            </div>
+              <p class="product--review">Your review*</p>
+              <textarea id="text" cols="100" rows="5" required></textarea>
+              <table>
+                <tr>
+                    <td class="td-first">Name*</td>
+                    <td class="td-first"><input class="namecomment" type="text" required></td>
+                </tr>
+                <tr>
+                    <td class="td-first">Email*</td>
+                    <td class="td-first"> <input class="emailcomment" type="email" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-first"><input type="checkbox" class="check--diamond--first"><span class="check--diamond--first" >Save my name, email, and website in this browser for the next time I comment.</span> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" required  class="submit--comment--product"></td>
+                </tr>
+              </table>
+            </form>
     </div>
     <div class="next--stage">
         <div class="container mt-3">
@@ -664,14 +672,11 @@
    <footer>
     <div class="foot">
         <div>
-            <h2>About Us</h2>
+            <h2>Contact Us</h2>
             <!-- <p>Just a short sentence. Write your own copy text here.</p> -->
             <div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3193500366883!2d106.66408561458913!3d10.786834792314448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2sFPT-Aptech%20Computer%20Education%20HCM!5e0!3m2!1sen!2s!4v1678870716608!5m2!1sen!2s" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <p class="address--home">Address: 590 Đ. Cách Mạng Tháng 8, Phường 11, Quận 3, Thành phố Hồ Chí Minh, Vietnam</p>
-            <p>Email: 16cm@gmail.com</p>
-            <p>Phone: không có</p>
         </div>
         <div class="stone--show">
             <h2>Gemstone Show</h2>

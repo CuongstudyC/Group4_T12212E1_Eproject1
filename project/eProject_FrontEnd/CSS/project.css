@@ -5,7 +5,7 @@
 }
 header{
     text-align: center;
-    background-color: pink;
+    background-color: papayawhip;
     height: 10px;
     line-height: 35px;
     font-size: 10px;
@@ -113,13 +113,13 @@ header{
     position:absolute;
     left:0;
 }
-.ss{
+/* .ss{
     font-size: 5px;
     margin-top:200px;
 }
 .trich--dan{
     font-size: 20px;
-}
+} */
 .No--cart{
     text-align: center;
 }
@@ -183,7 +183,7 @@ header{
     margin-left:10px;
 }
 .gotoshop:hover{
-    background-color: pink;
+    background-color: papayawhip;
 }
 
 .gotoshop{
@@ -304,7 +304,7 @@ header{
 }
 .div2{
     margin-top:100px;
-    background-color: pink;
+    background-color: papayawhip;
 }
 .lastest--collection,.Newest{
     text-align: center;
@@ -345,7 +345,7 @@ height: 200px;
     text-decoration: underline;
 }
 .read--more:hover{
-    background-color: pink;
+    background-color: papayawhip;
 }
 .content--box{
     position:relative;
@@ -371,7 +371,7 @@ height: 200px;
 }
 footer{
     margin-top:100px;
-    background-color:pink
+    background-color:papayawhip;
 }
 .foot{
     display:grid;
@@ -390,7 +390,7 @@ footer{
 }
 .end{
     display:block;
-    background-color:pink;
+    background-color:papayawhip;
     position:static;
 }
 .li1{
@@ -408,7 +408,7 @@ footer{
     display:none;
 }
 hr{
-    border:solid pink;
+    border:solid papayawhip;
 }
 .name{
     display:grid;
@@ -599,13 +599,13 @@ hr{
 }
 .next--stage{
     margin-top:100px;
-    background-color: pink;
+    background-color: papayawhip;
 }
 #Pre{
     margin-left:45%;
 }
 .pagination{
-    background-color: pink;
+    background-color: papayawhip;
     margin-top:3%;
 }
 #Will--Be--Show{
@@ -713,7 +713,7 @@ hr{
 }
 header{
     text-align: center;
-    background-color: pink;
+    background-color: papayawhip;
     height: 40px;
     line-height: 35px;
 }
@@ -861,6 +861,9 @@ section{
     height:500px;
     /* margin-left:1%; */
 }
+.range{
+    height:50px;
+}
 .P1{
     display:inline-block;
     width:480px;
@@ -994,7 +997,7 @@ section{
 }
 .div2{
     margin-top:100px;
-    background-color: pink;
+    background-color: papayawhip;
 }
 .lastest--collection,.Newest{
     text-align: center;
@@ -1053,7 +1056,7 @@ height: 200px;
 }
 footer{
     margin-top:100px;
-    background-color:pink
+    background-color:papayawhip;
 }
 .foot{
     display:grid;
@@ -1068,21 +1071,20 @@ footer{
 }
 .end{
     display:block;
-    background-color:pink;
+    background-color:papayawhip;
     position:static;
 }
 .li1{
     list-style-type:disc;
-    width:200px;
     text-decoration: underline;
-    margin-top:10px;
+    line-height: 45px;
     cursor: pointer;
 }
 .cate{
     margin-right:40px;
 }
 hr{
-    border:solid pink;
+    border:solid papayawhip;
 }
 .name{
     display:grid;
@@ -1115,14 +1117,7 @@ hr{
     color:black;
     width:max-content;
 }
-.address--home{
-    display:inline-block;
-    width:300px;
-    text-align: justify;
-}
-.ss,.trich--dan{
- text-indent: 100px;
-}
+
 .Diamond5--nav{
     margin-left:10%;
 }
@@ -1191,35 +1186,73 @@ hr{
     cursor: pointer;
 }
 
+#Hiden-Show{
+    display:none;
+    width:50%;
+    border:solid;
+
+}
 .context--description--first{
     width:50%;
     margin-left:30%;
     margin-top:3%;
     text-align: justify;
 }
-.rating {
-    display: inline-block;
-    font-size: 0;
+.submit--comment--product{
+    line-height: 30px;
+    background-color: black;
+    color:white;
+    margin-top:5px;
+    border: solid;
+    border-radius: 20%;
+}
+.submit--comment--product:hover{
+    background-color: rgba(7, 5, 12, 0.7);
+}
+.rate {
+    float: left;
+    padding: 0 10px 0 0;
+}
+.rate:not(:checked) > input {
+  display:none;
+}
+.rate:not(:checked) > label {
+    float: right;
+    width: 15px;
+    overflow: hidden;
+    white-space: nowrap;
     cursor: pointer;
-  }
-  
-  .fa-star {
-    font-size: 25px;
-    color:#ddd;
-  }
-  
- .fa-star.checked,
- .fa-star:hover,
- .fa-star:hover~.fa-star:before{
-    color:#ffdd00;
- }
+    font-size: 21px;
+    color:#ccc;
+    margin-top:-16px;
+}
+.rate:not(:checked) > label:before {
+    content: '\2605';
+}
+.product--review{
+    clear:both;
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
 
 .td-first{
     width:max-content;
 }
 .Add--product{
     height:100px;
-    background-color: pink;
+    background-color: papayawhip;
     width:75%;
     margin-left:10%;
     border-left:solid 12px oldlace;
@@ -1259,13 +1292,13 @@ hr{
 }
 .next--stage{
     margin-top:100px;
-    background-color: pink;
+    background-color: papayawhip;
 }
 #Pre{
     margin-left:45%;
 }
 .pagination{
-    background-color: pink;
+    background-color: papayawhip;
     margin-top:3%;
 }
 
@@ -1291,7 +1324,6 @@ hr{
     margin-left:10%;
 }
 .submit--checkout{
-    margin-left:13%;
     margin-top:4%;
 }
 #your--order{
@@ -1497,7 +1529,7 @@ hr{
 }
 #Box--forall{
     margin-top:10%;
-    background-color:rgba(217, 222, 122, 0.5);
+    background-color: papayawhip;
 }
 #Box--content--one{
     height:70px;
@@ -1507,7 +1539,7 @@ hr{
    
 }
 #OurTeam--member{
-    background-color: pink;
+    background-color: papayawhip;
 }
 .leader-writer{
     text-align: justify;
@@ -1586,4 +1618,11 @@ hr{
 .deltail--contact{
     padding-top: 20px;
     padding-left:5px;
+}
+.contactUs--email{
+    display: inline-block;
+    width:max-content;
+}
+#CreatMusic{
+    display:none;
 }
