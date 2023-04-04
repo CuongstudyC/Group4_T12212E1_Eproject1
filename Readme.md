@@ -1,2 +1,2 @@
 view website at:
-https://cuongstudyc.github.io/Group4_T12212E1_Eproject1
+https://github.com/CuongstudyC/Group4_T12212E1_Eproject1/blob/main/project/eProject_FrontEnd/HTML/home.html
