@@ -577,8 +577,7 @@
             <img class="pic"  src="/eProject_FrontEnd/image/hinhsp.jpg" alt="">
         </div>
       </div>
-    
-</div>
+      </div>
 <div class="sec3">
     <div>
         <img class="shipping--return--quality" src="https://themedemos.anariel.com/basti/wp-content/themes/basti/assets/images/features-icon-1.png" alt="">
@@ -599,6 +598,38 @@
     </div>
 </div>
 </div> 
+
+    <div class="center--modal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" id="button--modal" onclick="playvideo()">
+      Click here to excited
+    </button>
+</div>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="videoforfun"> <span class="textfun">Funny Video</span></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="stopvideo()" ></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body" id="playvideo">
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="stopvideo()">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+
  <div class="div2">
     <h4 class="lastest--collection">&#8212;LATEST COLLECTION</h4>
     <h2 class="Newest">Newest in Shop</h2>
@@ -971,11 +1002,11 @@
         <div class="col-sm-2">
             <p class="context" style="font-weight: bold; font-size: 40px;">4.8</p>
             <p class="context">
-                <span class="fa fa-star" style="color:yellow"></span>
-                <span class="fa fa-star" style="color:yellow"></span>
-                <span class="fa fa-star" style="color:yellow"></span>
-                <span class="fa fa-star" style="color:yellow"></span>
-                <span class="fa fa-star" style="color:yellow"></span>
+                <span class="fa fa-star" ></span>
+                <span class="fa fa-star" ></span>
+                <span class="fa fa-star" ></span>
+                <span class="fa fa-star" ></span>
+                <span class="fa fa-star" ></span>
             </p>
             <p class="context">3000 Ratings</p>
         </div>
@@ -1100,7 +1131,7 @@ if (boxPosition < windowHeight / 2) {
   setInterval(() => {
       box.style.backgroundColor = colors[currentColorIndex];
       currentColorIndex = (currentColorIndex + 1) % colors.length;
-    }, 3000);
+    }, 2000);
 } else {
   box.style.backgroundColor = 'darkorange'; /* trở lại màu sắc ban đầu khi kéo lên trên */
   clearInterval(); /* xóa chuyển đổi màu sắc nếu đã được đặt */
