@@ -3622,28 +3622,47 @@ function page3(){
     show.style.display="block";
 }
 
+function zzz(param){
+    localStorage.valueStar = param.dataset.star;
+    return false;
+ }
+
 function Cumment(){
     var com =document.getElementById("Comment");
     var name=document.getElementsByClassName("namecomment");
     var getcomment = document.getElementById("text");
-    var email = document.getElementsByClassName("emailcomment");
-    com.style.display="block";
+    var iwanttoshow = document.getElementById("Hiden-Show");
+    iwanttoshow.style.display="block";
+    var getstar = document.getElementById("getStar");
+
+    for (var i = 0 ;i <6 ; i ++){
+        if (i < localStorage.valueStar){
+            getstar.innerHTML +="&#9733";
+        }
+    }
     var check = document.getElementsByClassName("check--diamond--first");
     var hiden =document.getElementsByClassName("td-first");
-    com.innerHTML= name[0].value +"-"+email[0].value +": " + getcomment.value;
+    com.innerHTML += name[0].value + ": "+ "<br>";
+    for (var i =0 ;i <getcomment.value.length; i++){
+        com.innerHTML += getcomment.value[i];
+        for (var j =48; j <getcomment.value.length ; j+=49){
+        if ( i == j ){
+            com.innerHTML += "<br>";
+         getstar.innerHTML += "<br>";
+        }
+    }
+}
+    com.innerHTML += "<br>";
+    getstar.innerHTML +="<br><br>";
     if (check[0].checked){
         for (var i=0;i<hiden.length;i++){
             hiden[i].style.display ="none";
 
         }
     }
-    // else{
-    //     for (var i=0;i<hiden.length;i++){
-    //         hiden[i].style.display ="inline";
-    //     }
-    // }
     return false;
 }
+
     const form = document.querySelector("form");
 
     form.addEventListener("submit", function(event) {
@@ -3679,9 +3698,136 @@ function Cumment(){
         getcomment.value="";
       });
 
-function CheckOut(){
-    alert("Cash successful!\n Have a nice day");
+function playvideo(){
+    var play = document.getElementById("playvideo");
+    play.innerHTML = "  <iframe id='Play' src='https://www.youtube.com/embed/RAwrJZVm_H8' title='Phản ứng của tao trong 1 tiếng loop cực mượt' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen  ></iframe>";
 }
+
+function stopvideo(){
+    var play = document.getElementById("playvideo");
+    play.innerHTML ="";
+}
+function phatnhac(){
+    var audio = document.getElementById("CreatMusic");
+    if (sessionStorage.dem ==1){
+        audio.innerHTML = "<audio src='/eProject_FrontEnd/image/Weekend-Has-Come-Remix-Remix.mp3' controls autoplay loop id='myaudio'></audio>";
+    }
+    var myaudio = document.getElementById("myaudio");
+    if (parseInt(sessionStorage.dem) %2 !=0){
+        myaudio.play();
+    }
+    else{
+        myaudio.pause();
+    }
+    sessionStorage.dem = parseInt( sessionStorage.dem)  +1;
+}
+
+function CheckOut(){
+        //default:
+        localStorage.count=0;
+        localStorage.TotalForAll=0;
+        //product 1:
+        localStorage.sum1=0;
+        localStorage.soluong1=0;
+        localStorage.soluongTotal1=0;
+        //product 2:
+        localStorage.sum2=0;
+        localStorage.soluong2=0;
+        localStorage.soluongTotal2=0;
+        //product 3:
+        localStorage.sum3=0;
+        localStorage.soluong3=0;
+        localStorage.soluongTotal3=0;
+       //product 4:
+       localStorage.sum4=0;
+       localStorage.soluong4=0;
+       localStorage.soluongTotal4=0;
+      //product 5:
+      localStorage.sum5=0;
+      localStorage.soluong5=0;
+      localStorage.soluongTotal5=0;
+      //product 6:
+      localStorage.sum6=0;
+      localStorage.soluong6=0;
+      localStorage.soluongTotal6=0;
+      //product 7:
+      localStorage.sum7=0;
+      localStorage.soluong7=0;
+      localStorage.soluongTotal7=0;
+     //product 8:
+     localStorage.sum8=0;
+     localStorage.soluong8=0;
+     localStorage.soluongTotal8=0;
+      //product 9:
+      localStorage.sum9=0;
+      localStorage.soluong9=0;
+      localStorage.soluongTotal9=0;
+     //product 10:
+     localStorage.sum10=0;
+     localStorage.soluong10=0;
+     localStorage.soluongTotal10=0;
+      //product 11:
+      localStorage.sum11=0;
+      localStorage.soluong11=0;
+      localStorage.soluongTotal11=0;
+       //product 12:
+       localStorage.sum12=0;
+       localStorage.soluong12=0;
+       localStorage.soluongTotal12=0;
+        //product 13:
+        localStorage.sum13=0;
+        localStorage.soluong13=0;
+        localStorage.soluongTotal13=0;
+     //product 14:
+     localStorage.sum14=0;
+     localStorage.soluong14=0;
+     localStorage.soluongTotal14=0;
+     //product 15:
+     localStorage.sum15=0;
+     localStorage.soluong15=0;
+     localStorage.soluongTotal15=0;
+     //product 16:
+     localStorage.sum16=0;
+     localStorage.soluong16=0;
+     localStorage.soluongTotal16=0;
+     //product 17:
+     localStorage.sum17=0;
+     localStorage.soluong17=0;
+     localStorage.soluongTotal17=0;
+     //product 18:
+     localStorage.sum18=0;
+     localStorage.soluong18=0;
+     localStorage.soluongTotal18=0;
+     //product 19:
+     localStorage.sum19=0;
+     localStorage.soluong19=0;
+     localStorage.soluongTotal19=0;
+     //product 20:
+     localStorage.sum20=0;
+     localStorage.soluong20=0;
+     localStorage.soluongTotal20=0;
+     //product 21:
+     localStorage.sum21=0;
+     localStorage.soluong21=0;
+     localStorage.soluongTotal21=0;
+      //product 22:
+      localStorage.sum22=0;
+      localStorage.soluong22=0;
+      localStorage.soluongTotal22=0;
+       //product 23:
+       localStorage.sum23=0;
+       localStorage.soluong23=0;
+       localStorage.soluongTotal23=0;
+         //product 24:
+         localStorage.sum24=0;
+         localStorage.soluong24=0;
+         localStorage.soluongTotal24=0;
+            alert("Cash successful!\n Have a nice day");
+            window.location.href ='/eProject_FrontEnd/HTML/home.html';
+           return false; 
+
+}
+
 function CheckItOut(){
     if (localStorage.countRemove == 0 || localStorage.count <=0 || isNaN(localStorage.TotalForAll)){
         alert("You must go to cart in shop!!!");
